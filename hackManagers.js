@@ -42,7 +42,7 @@ export async function main(ns) {
     while (true) {
 
         //grow server
-        if(Math.floor(serverMoney) < serverMaxMoney) {
+        if(Math.ceil(serverMoney) < serverMaxMoney) {
             for (const server of servers) {
                 if(ns.fileExists(growScript, server)) {
                     ns.exec(growScript, server, calculateThreads(server, growScript), target);
